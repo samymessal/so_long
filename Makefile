@@ -1,5 +1,5 @@
 
-SRCS	=	test.c
+SRCS	=	test.c atoi_base.c
 CC		=	clang
 OBJ		=	$(SRCS: .c=.o)
 NAME	=	so_long
