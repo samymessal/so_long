@@ -6,7 +6,7 @@
 #    By: smessal <smessal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/02 19:49:20 by smessal           #+#    #+#              #
-#    Updated: 2022/09/02 19:49:41 by smessal          ###   ########.fr        #
+#    Updated: 2022/09/03 16:15:21 by smessal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ OBJ		= $(SRC:.c=.o)
 
 CC		=		cc
 RM		=		rm -rf
-CFLAGS	=		-Wall -Werror -Wextra -I./includes
+CFLAGS	=		-Wall -Werror -Wextra -g3 -I./includes
 
 NAME	=		so_long
 
