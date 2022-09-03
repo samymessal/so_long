@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 12:47:31 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/03 18:02:08 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/03 18:57:58 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #define RED_PIXEL 0xFF0000
 #define GREEN_PIXEL 0xFF00
-#define WINDOW_HEIGHT 1500
+#define WINDOW_HEIGHT 1000
 #define WINDOW_WIDTH 2000
 
 typedef struct s_rect
@@ -102,7 +102,10 @@ int	render_rect_img(t_img *img, t_rect rect)
 int	render(t_data *data)
 {
 	t_rect	rect1;
+	int		i;
+	//int		j;
 
+	i = 0;
 	rect1.x = 0;
 	rect1.y = 0;
 	rect1.height = WINDOW_HEIGHT;
@@ -113,8 +116,12 @@ int	render(t_data *data)
 	// 	render_rect_img(&data->img, rect1);
 	// 	render_rect_img(&data->img, (t_rect){0, 0, 100, 100, GREEN_PIXEL});
 	// }
-	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img.mlx_img, 0, 0);
-	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img.mlx_img, 188, 0);
+	while (i <= WINDOW_WIDTH)
+	{
+		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img.mlx_img, i, 0);
+		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img.mlx_img, i, WINDOW_HEIGHT);
+		i += 64;
+	}
 	return (0);
 }
 // void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
@@ -129,6 +136,7 @@ int	render(t_data *data)
 int main(void)
 {
 	t_data	data;
+	t_data	data0;
 	int		x;
 	int		y;
 
@@ -136,7 +144,8 @@ int main(void)
 	y = 0;
 	data.mlx_ptr = mlx_init();
 	data.win_ptr = mlx_new_window(data.mlx_ptr, WINDOW_HEIGHT, WINDOW_WIDTH, "Rvrignon zamel");
-
+	data0.mlx_ptr = data.mlx_ptr;
+	data0.win_ptr = data.win_ptr;
 	/* Create image test */
 	//data.img.mlx_img = mlx_new_image(data.mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT);
 	//data.img.addr = mlx_get_data_addr(data.img.mlx_img, &data.img.bpp, &data.img.line_len, &data.img.endian);
@@ -144,9 +153,12 @@ int main(void)
 	int width;
 	int height;
 	/* Import image from internet */
-	data.img.mlx_img = mlx_xpm_file_to_image(data.mlx_ptr, "img/barbelets_size.xpm", &width, &height);
+	//render_rect_img(&data.img, (t_rect){0, 0, WINDOW_HEIGHT, WINDOW_WIDTH, GREEN_PIXEL});
+	data.img.mlx_img = mlx_xpm_file_to_image(data.mlx_ptr, "img/grillage_cc8233_size.xpm", &width, &height);
+	data0.img.mlx_img = mlx_xpm_file_to_image(data.mlx_ptr, "img/case0.xpm", &width, &height);
 	printf("%d\n%d\n", width, height);
 	mlx_loop_hook(data.mlx_ptr, &render, &data);
+	
 	//mlx_key_hook(data.win_ptr, &handle_input, &data);
 	mlx_hook(data.win_ptr, KeyPress, KeyPressMask, &handle_keypress, &data);
 	mlx_hook(data.win_ptr, KeyRelease, KeyReleaseMask, &handle_keyrelease, &data); /* CHANGED */
