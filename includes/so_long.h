@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 15:23:44 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/03 15:55:55 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/04 18:28:45 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@
 # include "../mlx_linux/mlx.h"
 
 #define BUFFER_SIZE 1
-
+#define RED_PIXEL 0xFF0000
+#define GREEN_PIXEL 0xFF00
+#define WINDOW_HEIGHT 1000
+#define WINDOW_WIDTH 2000
 /*----------------Structures-----------------*/
 typedef struct s_img
 {
@@ -33,14 +36,26 @@ typedef struct s_img
 	int		bpp;
 	int		line_len;
 	int		endian;
+	int		width;
+	int		height;
 }	t_img;
 
 typedef struct s_data
 {
 	void	*mlx_ptr;
 	void	*win_ptr;
-	t_img	img;
 }	t_data;
+
+typedef struct s_all
+{
+	t_data	*data;
+	t_img	*img;
+}	t_all;
+
+/*---------------Events-----------------------*/
+int	handle_keypress(int keysym, t_data *data);
+int	handle_no_event(void *data);
+int	handle_keyrelease(int keysym, void *data);
 /*---------------Functions--------------------*/
 char	*get_next_line(int fd);
 int		ft_count_lines(char	*file_name);

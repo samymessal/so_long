@@ -6,11 +6,11 @@
 #    By: smessal <smessal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/02 19:49:20 by smessal           #+#    #+#              #
-#    Updated: 2022/09/03 16:15:21 by smessal          ###   ########.fr        #
+#    Updated: 2022/09/04 18:11:13 by smessal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC		=	test.c
+SRC		=	utils/image_process.c utils/events.c
 
 OBJ		= $(SRC:.c=.o)
 
