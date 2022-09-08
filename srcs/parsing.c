@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:42:07 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/02 18:51:41 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/08 21:47:28 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,29 +82,30 @@ int	square_map(char **map)
 	return (1);
 }
 
-int	errors_man(char **av, char **map, int lines)
-{
-	if (!ft_ber_file(av))
-		return (0);
-	else if (!square_map(map))
-		return (0);
-	else if (!map_walls(map, lines))
-		return (0);
-	else if (!map_elements(map))
-		return (0);
-}
+// int	errors_man(char **av, char **map, int lines)
+// {
+// 	if (!ft_ber_file(av))
+// 		return (0);
+// 	else if (!square_map(map))
+// 		return (0);
+// 	else if (!map_walls(map, lines))
+// 		return (0);
+// 	else if (!map_elements(map))
+// 		return (0);
+// 	return (1);
+// }
 
-int	main(int ac, char **av)
-{
-	char	*test;
-	int		lines;
-	char	**all;
-	int		fd;
+// int	main(int ac, char **av)
+// {
+// 	char	*test;
+// 	int		lines;
+// 	char	**all;
+// 	int		fd;
 	
-	if (ac > 2)
-		return (0);
-	lines = ft_count_lines(av[1]);
-	all = read_map(av[1]);
-	if (!errors_man(av, all, lines))
-		printf("Error\n");
-}
+// 	if (ac > 2)
+// 		return (0);
+// 	lines = ft_count_lines(av[1]);
+// 	all = read_map(av[1]);
+// 	if (!errors_man(av, all, lines))
+// 		printf("Error\n");
+// }

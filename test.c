@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 12:47:31 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/03 18:57:58 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/08 14:00:47 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	render_rect_img(t_img *img, t_rect rect)
 {
 	int	i;
 	int	j;
-	
+
 	i = rect.y;
 	while (i < rect.y + rect.height)
 	{

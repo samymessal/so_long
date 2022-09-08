@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 15:23:44 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/04 18:28:45 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/08 22:01:27 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,12 @@ typedef struct s_all
 	t_img	*img;
 }	t_all;
 
+typedef	struct s_pos
+{
+	int	width;
+	int height;
+}	t_pos;
+
 /*---------------Events-----------------------*/
 int	handle_keypress(int keysym, t_data *data);
 int	handle_no_event(void *data);
@@ -66,5 +72,15 @@ int		map_walls(char **map, int lines);
 int		count_elements(char **map, char elem);
 int		map_elements(char **map);
 int		square_map(char **map);
+/*---------------Image Process----------------*/
+void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
+void	draw(t_img *img_big, t_img img_s, int x_dest, int y_dest);
+void	download_image(t_data *data, t_img *img, char *path);
+int		render(t_all *all);
+/*---------------Initialize-------------------*/
+t_img	*init_img(t_data *data);
+void	draw_all(t_img *img_big, t_img *all, t_pos screen, char **map);
+void	init_win(char *filename);
+
 
 #endif

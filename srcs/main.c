@@ -6,13 +6,16 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 16:20:55 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/04 16:21:26 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/08 20:48:14 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	main(void)
+int	main(int ac, char **av)
 {
+	if (ac != 2)
+		return (0);
+	init_win(av[1]);
 	return (0);
 }
