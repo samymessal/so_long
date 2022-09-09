@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 15:23:44 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/08 22:01:27 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/09 17:34:32 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,14 @@ typedef struct s_data
 {
 	void	*mlx_ptr;
 	void	*win_ptr;
+	char	**map;
 }	t_data;
 
 typedef struct s_all
 {
-	t_data	*data;
-	t_img	*img;
+	t_data	data;
+	t_img	big;
+	t_img	*imgs;
 }	t_all;
 
 typedef	struct s_pos
@@ -79,8 +81,12 @@ void	download_image(t_data *data, t_img *img, char *path);
 int		render(t_all *all);
 /*---------------Initialize-------------------*/
 t_img	*init_img(t_data *data);
-void	draw_all(t_img *img_big, t_img *all, t_pos screen, char **map);
+void	draw_all(t_img *img_big, t_img *all, char **map);
 void	init_win(char *filename);
-
+/*---------------Moves------------------------*/
+t_pos	find_elem(char **map, char elem);
+int		check_if_ok(char **map, t_pos pos_p, int keysym, char elem);
+void	move(char **map, t_pos pos_p, int keysym);
+void	update_map(char **map);
 
 #endif

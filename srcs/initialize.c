@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:27:08 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/08 22:16:53 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/09 17:32:22 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_img	*init_img(t_data *data)
 	return (all);
 }
 
-void	draw_all(t_img *img_big, t_img *all, t_pos screen, char **map)
+void	draw_all(t_img *img_big, t_img *all, char **map)
 {
 	int	i;
 	int	j;
@@ -41,10 +41,10 @@ void	draw_all(t_img *img_big, t_img *all, t_pos screen, char **map)
 	i = 0;
 	x = 0;
 	y = 0;
-	(void)screen;
 	while (map[i])
 	{
 		j = 0;
+		x = 0;
 		while (map[i][j] != '\0' && map[i][j] != '\n')
 		{
 			if (map[i][j] == '0')
@@ -57,13 +57,21 @@ void	draw_all(t_img *img_big, t_img *all, t_pos screen, char **map)
 				draw(img_big, all[4], x, y);
 			else if (map[i][j] == 'E')
 				draw(img_big, all[5], x, y);
+			else if (map[i][j] == 'O')
+				draw(img_big, all[6], x, y);
 			x += 64;
 			j++;
-			printf("%d\n", j);
 		}
 		i++;
 		y += 64;
 	}
+}
+
+int	render(t_all *all)
+{
+	draw_all(&all->big, all->imgs, all->data.map);
+	mlx_put_image_to_window(all->data.mlx_ptr, all->data.win_ptr, all->big.mlx_img, 0, 0);
+	return (0);
 }
 
 void	init_win(char *filename)
@@ -73,6 +81,7 @@ void	init_win(char *filename)
 	t_pos	screen;
 	t_img	*imgs;
 	t_img	big;
+	t_all	all;
 	
 	map = read_map(filename);
 	// if (!map || !errors_man(av, map, ft_count_lines(filename)))
@@ -82,16 +91,20 @@ void	init_win(char *filename)
 	// }
 	screen.width = (ft_strlen(map[0]) - 1) * 64;
 	screen.height = (ft_count_lines(filename)) * 64;
-	printf("%d\n", screen.height);
 	data.mlx_ptr = mlx_init();
 	data.win_ptr = mlx_new_window(data.mlx_ptr, screen.width, screen.height, "SO_LONG");
-	big.mlx_img = mlx_new_image(data.mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT);
+	data.map = map;
+	big.mlx_img = mlx_new_image(data.mlx_ptr, screen.width, screen.height);
 	big.addr = mlx_get_data_addr(big.mlx_img, &big.bpp, &big.line_len, &big.endian);
 	imgs = init_img(&data);
-	draw_all(&big, imgs, screen, map);
-	// printf("test\n");
-	mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, big.mlx_img, 0, 0);
+	all.data = data;
+	all.big = big;
+	all.imgs = imgs;
 	mlx_hook(data.win_ptr, KeyPress, KeyPressMask, &handle_keypress, &data);
 	mlx_hook(data.win_ptr, KeyRelease, KeyReleaseMask, &handle_keyrelease, &data);
+	mlx_loop_hook(data.mlx_ptr, &render, &all);
 	mlx_loop(data.mlx_ptr);
+	mlx_destroy_window(data.mlx_ptr, data.win_ptr);
+	mlx_destroy_display(data.mlx_ptr);
+	free(data.mlx_ptr);
 }

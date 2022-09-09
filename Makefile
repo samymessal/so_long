@@ -6,12 +6,12 @@
 #    By: smessal <smessal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/02 19:49:20 by smessal           #+#    #+#              #
-#    Updated: 2022/09/08 21:38:57 by smessal          ###   ########.fr        #
+#    Updated: 2022/09/09 16:54:40 by smessal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC		=	srcs/initialize.c srcs/main.c srcs/parsing.c utils/image_process.c \
-			utils/events.c utils/parsing_errors.c utils/get_next_line.c
+			utils/events.c utils/parsing_errors.c utils/get_next_line.c utils/moves.c
 
 OBJ		= $(SRC:.c=.o)
 

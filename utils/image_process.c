@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 16:21:58 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/08 22:05:24 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/09 17:06:33 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,6 @@ void	download_image(t_data *data, t_img *img, char *path)
 	img->mlx_img = mlx_xpm_file_to_image(data->mlx_ptr, path, &img->width, &img->height);
 	img->addr = mlx_get_data_addr(img->mlx_img, &img->bpp, &img->line_len, &img->endian);
 	return ;
-}
-
-int	render(t_all *all)
-{
-	mlx_put_image_to_window(all->data->mlx_ptr, all->data->win_ptr, all->img->mlx_img, 0, 0);
-	return (0);
 }
 
 // int	main(void)
