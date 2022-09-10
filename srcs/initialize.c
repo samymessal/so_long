@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:27:08 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/09 17:32:22 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/10 16:36:08 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_img	*init_img(t_data *data)
 	download_image(data, &all[2], "img/douane.xpm");
 	download_image(data, &all[3], "img/passport.xpm");
 	download_image(data, &all[4], "img/player.xpm");
-	download_image(data, &all[5], "img/dog.xpm");
+	download_image(data, &all[5], "img/police.xpm");
 	download_image(data, &all[6], "img/boat.xpm");
 	return (all);
 }
@@ -56,9 +56,11 @@ void	draw_all(t_img *img_big, t_img *all, char **map)
 			else if (map[i][j] == 'P')
 				draw(img_big, all[4], x, y);
 			else if (map[i][j] == 'E')
-				draw(img_big, all[5], x, y);
+				draw(img_big, all[2], x, y);
 			else if (map[i][j] == 'O')
 				draw(img_big, all[6], x, y);
+			else if (map[i][j] == 'M')
+				draw(img_big, all[5], x, y);
 			x += 64;
 			j++;
 		}
