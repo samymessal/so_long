@@ -1,0 +1,16 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/mnt/nfs/homes/smessal/Desktop/so_long/so_long_git'
+cc -Wall -Wextra -Werror -g3 -I./includes -I/usr/include -Imlx_linux -O3 -c srcs/initialize.c -o srcs/initialize.o
+cc -Wall -Wextra -Werror -g3 -I./includes -I/usr/include -Imlx_linux -O3 -c srcs/main.c -o srcs/main.o
+ 
+cc -Wall -Wextra -Werror -g3 -I./includes -I/usr/include -Imlx_linux -O3 -c srcs/parsing.c -o srcs/parsing.o
+ 
+cc -Wall -Wextra -Werror -g3 -I./includes -I/usr/include -Imlx_linux -O3 -c utils/image_process.c -o utils/image_process.o
+cc -Wall -Wextra -Werror -g3 -I./includes -I/usr/include -Imlx_linux -O3 -c utils/events.c -o utils/events.o
+cc -Wall -Wextra -Werror -g3 -I./includes -I/usr/include -Imlx_linux -O3 -c utils/parsing_errors.c -o utils/parsing_errors.o
+ 
+cc -Wall -Wextra -Werror -g3 -I./includes -I/usr/include -Imlx_linux -O3 -c utils/get_next_line.c -o utils/get_next_line.o
+cc -Wall -Wextra -Werror -g3 -I./includes -I/usr/include -Imlx_linux -O3 -c utils/moves.c -o utils/moves.o
+cc srcs/initialize.o srcs/main.o srcs/parsing.o utils/image_process.o utils/events.o utils/parsing_errors.o utils/get_next_line.o utils/moves.o -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz libft.a -o so_long
+make: Leaving directory '/mnt/nfs/homes/smessal/Desktop/so_long/so_long_git'
+ 
