@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:27:08 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/10 18:22:15 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/11 16:25:43 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ t_img	*init_img(t_data *data)
 {
 	t_img	*all;
 	int		i;
-	
+
 	i = 0;
-	all = malloc(sizeof(t_img) * 7);
+	all = ft_calloc(sizeof(t_img), 8);
 	if (!all)
 		return (0);
 	download_image(data, &all[0], "img/case_0.xpm");
@@ -33,81 +33,63 @@ t_img	*init_img(t_data *data)
 
 void	draw_all(t_img *img_big, t_img *all, char **map)
 {
-	int	i;
-	int	j;
-	int	x;
-	int	y;
+	int		i;
+	int		j;
+	t_pos	pos;
 
 	i = 0;
-	x = 0;
-	y = 0;
+	pos.height = 0;
 	while (map[i])
 	{
 		j = 0;
-		x = 0;
-		while (map[i][j] != '\0' && map[i][j] != '\n')
+		pos.width = 0;
+		while (map[i][j] && map[i][j] != '\0' && map[i][j] != '\n')
 		{
-			if (map[i][j] == '0')
-				draw(img_big, all[0], x, y);
-			else if (map[i][j] == '1')
-				draw(img_big, all[1], x, y);
-			else if (map[i][j] == 'C')
-				draw(img_big, all[3], x, y);
-			else if (map[i][j] == 'P')
-				draw(img_big, all[4], x, y);
-			else if (map[i][j] == 'E')
-				draw(img_big, all[2], x, y);
-			else if (map[i][j] == 'O')
-				draw(img_big, all[6], x, y);
-			else if (map[i][j] == 'M')
-				draw(img_big, all[5], x, y);
-			x += 64;
+			conditions_draw(img_big, all, map[i][j], pos);
+			pos.width += 64;
 			j++;
 		}
 		i++;
-		y += 64;
+		pos.height += 64;
 	}
 }
 
 int	render(t_all *all)
 {
 	draw_all(&all->big, all->imgs, all->data.map);
-	mlx_put_image_to_window(all->data.mlx_ptr, all->data.win_ptr, all->big.mlx_img, 0, 0);
+	mlx_put_image_to_window(all->data.mlx_ptr, all->data.win_ptr, \
+		all->big.mlx_img, 0, 0);
 	return (0);
 }
 
-void	init_win(char *filename)
+void	init_data(t_data *data, int width, int height, char **map)
 {
-	char	**map;
+	data->mlx_ptr = mlx_init();
+	data->win_ptr = mlx_new_window(data->mlx_ptr, width, height, "SO_LONG");
+	data->map = map;
+	data->moves = 0;
+}
+
+void	init_win(char *filename, char **map)
+{
 	t_data	data;
 	t_pos	screen;
 	t_img	*imgs;
-	t_img	big;
 	t_all	all;
-	
-	map = read_map(filename);
-	// if (!map || !errors_man(av, map, ft_count_lines(filename)))
-	// {
-	// 	write(1, "Error\n", 6);
-	// 	return (0);
-	// }
+
 	screen.width = (ft_strlen(map[0]) - 1) * 64;
 	screen.height = (ft_count_lines(filename)) * 64;
-	data.mlx_ptr = mlx_init();
-	data.win_ptr = mlx_new_window(data.mlx_ptr, screen.width, screen.height, "SO_LONG");
-	data.map = map;
-	big.mlx_img = mlx_new_image(data.mlx_ptr, screen.width, screen.height);
-	big.addr = mlx_get_data_addr(big.mlx_img, &big.bpp, &big.line_len, &big.endian);
-	imgs = init_img(&data);
+	init_data(&data, screen.width, screen.height, map);
 	all.data = data;
-	all.big = big;
+	all.big.mlx_img = mlx_new_image(data.mlx_ptr, screen.width, screen.height);
+	all.big.addr = mlx_get_data_addr(all.big.mlx_img, &all.big.bpp, \
+						&all.big.line_len, &all.big.endian);
+	imgs = init_img(&data);
 	all.imgs = imgs;
-	data.moves = 0;
 	mlx_hook(data.win_ptr, KeyPress, KeyPressMask, &handle_keypress, &data);
-	mlx_hook(data.win_ptr, KeyRelease, KeyReleaseMask, &handle_keyrelease, &data);
+	mlx_hook(data.win_ptr, KeyRelease, KeyReleaseMask, \
+		&handle_keyrelease, &data);
 	mlx_loop_hook(data.mlx_ptr, &render, &all);
 	mlx_loop(data.mlx_ptr);
-	mlx_destroy_window(data.mlx_ptr, data.win_ptr);
-	mlx_destroy_display(data.mlx_ptr);
-	free(data.mlx_ptr);
+	free_all(all);
 }

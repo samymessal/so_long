@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 16:21:58 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/09 17:06:33 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/11 16:11:32 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,30 +56,21 @@ void	download_image(t_data *data, t_img *img, char *path)
 	return ;
 }
 
-// int	main(void)
-// {
-// 	t_data	data;
-// 	t_img	img;
-// 	t_img	img_wall;
-// 	t_all	test;
-
-// 	data.mlx_ptr = mlx_init();
-// 	data.win_ptr = mlx_new_window(data.mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT, "SO_LONG");
-	
-// 	img.mlx_img = mlx_new_image(data.mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT);
-// 	img.addr = mlx_get_data_addr(img.mlx_img, &img.bpp, &img.line_len, &img.endian);
-
-// 	download_image(&data, &img_wall, "img/grillage_cc8233_size.xpm");
-// 	img_wall.addr = mlx_get_data_addr(img_wall.mlx_img, &img_wall.bpp, &img_wall.line_len, &img_wall.endian);
-// 	draw(&img, &img_wall, 0, 0);
-// 	test.data = &data;
-// 	test.img = &img;
-// 	//mlx_loop_hook(data.mlx_ptr, &render, &test);
-// 	mlx_put_image_to_window(test.data->mlx_ptr, test.data->win_ptr, test.img->mlx_img, 0, 0);
-
-// 	mlx_hook(data.win_ptr, KeyPress, KeyPressMask, &handle_keypress, &data);
-// 	mlx_hook(data.win_ptr, KeyRelease, KeyReleaseMask, &handle_keyrelease, &data);
-// 	mlx_loop(data.mlx_ptr);
-// 	// mlx_destroy_display(data.mlx_ptr);
-// 	// free(data.mlx_ptr);
-// }
+void	conditions_draw(t_img *img_big, t_img *all, char map, t_pos pos)
+{
+	if (map == '0')
+		draw(img_big, all[0], pos.width, pos.height);
+	else if (map == '1')
+		draw(img_big, all[1], pos.width, pos.height);
+	else if (map == 'C')
+		draw(img_big, all[3], pos.width, pos.height);
+	else if (map == 'P')
+		draw(img_big, all[4], pos.width, pos.height);
+	else if (map == 'E')
+		draw(img_big, all[2], pos.width, pos.height);
+	else if (map == 'O')
+		draw(img_big, all[6], pos.width, pos.height);
+	else if (map == 'M')
+		draw(img_big, all[5], pos.width, pos.height);
+	return ;
+}

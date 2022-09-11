@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 16:43:38 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/02 18:48:40 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/11 16:40:41 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,15 @@ int	ft_ber_file(char **av)
 	return (0);
 }
 
-int	map_walls(char **map, int lines)
+int	map_walls(char **map, char *filename)
 {
 	int	i;
 	int	j;
+	int	lines;
 
 	i = 0;
 	j = 0;
+	lines = ft_count_lines(filename);
 	while (map[0][i] != '\0' && map[0][i] != '\n')
 	{
 		if (map[0][i] != '1')
@@ -63,7 +65,7 @@ int	count_elements(char **map, char elem)
 
 	i = 0;
 	count = 0;
-	while (map[i])
+	while (map && map[i])
 	{
 		j = 0;
 		while (map[i][j] && map[i][j] != '\0' && map[i][j] != '\n')
@@ -103,5 +105,28 @@ int	map_elements(char **map)
 	}
 	if (exit < 1 || items < 1 || start != 1)
 		return (0);
+	return (1);
+}
+
+int	square_map(char **map)
+{
+	int	line1;
+	int	i;
+	int	j;
+
+	i = 0;
+	while (map[0][i] && map[0][i] != '\0' && map[0][i] != '\n')
+		i++;
+	line1 = i;
+	i = 0;
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j] && map[i][j] != '\0' && map[i][j] != '\n')
+			j++;
+		if (j != line1)
+			return (0);
+		i++;
+	}
 	return (1);
 }

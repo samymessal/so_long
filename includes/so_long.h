@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 15:23:44 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/10 18:14:08 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/11 16:43:34 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,25 +69,31 @@ int	handle_keyrelease(int keysym, void *data);
 char	*get_next_line(int fd);
 int		ft_count_lines(char	*file_name);
 char	**read_map(char *file_name);
-int		errors_man(char **av, char **map, int lines);
-int		ft_ber_file(char **av);
-int		map_walls(char **map, int lines);
-int		count_elements(char **map, char elem);
-int		map_elements(char **map);
-int		square_map(char **map);
 /*---------------Image Process----------------*/
 void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
 void	draw(t_img *img_big, t_img img_s, int x_dest, int y_dest);
 void	download_image(t_data *data, t_img *img, char *path);
 int		render(t_all *all);
+void	conditions_draw(t_img *img_big, t_img *all, char map, t_pos pos);
 /*---------------Initialize-------------------*/
 t_img	*init_img(t_data *data);
 void	draw_all(t_img *img_big, t_img *all, char **map);
-void	init_win(char *filename);
+void	init_win(char *filename, char **map);
 /*---------------Moves------------------------*/
 t_pos	find_elem(char **map, char elem);
 int		check_if_ok(char **map, t_pos pos_p, int keysym, char elem);
 void	move(char **map, t_pos pos_p, int keysym);
 void	update_map(char **map);
+/*---------------Errors------------------------*/
+int		ft_ber_file(char **av);
+int		map_walls(char **map, char *filename);
+int		count_elements(char **map, char elem);
+int		map_elements(char **map);
+int		square_map(char **map);
+int		messages(char **av, char **map);
+/*----------------Free--------------------------*/
+void	free_tab(char **map);
+void	free_imgs(t_data *data, t_img *imgs);
+void	free_all(t_all all);
 
 #endif

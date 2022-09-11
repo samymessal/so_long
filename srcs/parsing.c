@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:42:07 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/09 17:32:10 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/11 16:40:33 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	ft_count_lines(char	*file_name)
 	temp = malloc(sizeof(char) * 2);
 	if (!temp)
 		return (0);
+	temp2 = 'c';
 	while (ret == BUFFER_SIZE)
 	{
 		ret = read(fd, temp, BUFFER_SIZE);
@@ -50,36 +51,13 @@ char	**read_map(char *file_name)
 	
 	i = 0;
 	lines = ft_count_lines(file_name);
-	map = malloc(sizeof(char *) * lines);
+	map = ft_calloc(sizeof(char *), (lines + 1));
 	if (!map)
 		return (NULL);
 	fd = open(file_name, O_RDONLY);
 	while (i < lines)
 		map[i++] = get_next_line(fd);
 	return (map);
-}
-
-int	square_map(char **map)
-{
-	int	line1;
-	int	i;
-	int	j;
-
-	i = 0;
-	while (map[0][i] && map[0][i] != '\0' && map[0][i] != '\n')
-		i++;
-	line1 = i;
-	i = 0;
-	while (map[i])
-	{
-		j = 0;
-		while (map[i][j] && map[i][j] != '\0' && map[i][j] != '\n')
-			j++;
-		if (j != line1)
-			return (0);
-		i++;
-	}
-	return (1);
 }
 
 // int	errors_man(char **av, char **map, int lines)
