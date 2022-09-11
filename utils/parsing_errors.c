@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 16:43:38 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/11 16:40:41 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/11 20:57:03 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ int	ft_ber_file(char **av)
 	int	i;
 
 	i = 0;
-	while (*av[1])
+	while (av[1][i])
 	{
-		if (*av[1] == '.')
+		if (av[1][i] == '.')
 		{
-			if (ft_strncmp(av[1], ".ber", 5))
+			if (ft_strncmp(&av[1][i], ".ber", 5))
 				return (0);
 			else
 				return (1);
 		}
-		av[1]++;
+		i++;
 	}
 	return (0);
 }
