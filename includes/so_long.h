@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 15:23:44 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/15 18:18:50 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/15 19:08:10 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,13 @@ char	**read_map(char *file_name);
 /*---------------Image Process----------------*/
 void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
 void	draw(t_img *img_big, t_img img_s, int x_dest, int y_dest);
-void	download_image(t_data *data, t_img *img, char *path);
+int		download_image(t_data *data, t_img *img, char *path);
 int		render(t_all *all);
 void	conditions_draw(t_img *img_big, t_img *all, char map, t_pos pos);
 /*---------------Initialize-------------------*/
 t_img	*init_img(t_data *data);
 void	draw_all(t_img *img_big, t_img *all, char **map);
-void	init_win(char *filename, char **map);
+int		init_win(char *filename, char **map);
 /*---------------Moves------------------------*/
 t_pos	find_elem(char **map, char elem);
 int		check_if_ok(char **map, t_pos pos_p, int keysym, char elem);

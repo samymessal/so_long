@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 16:20:55 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/15 17:51:04 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/15 19:32:05 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(int ac, char **av)
 	}
 	if (!messages(av, map))
 		return (free_tab(map), 0);
-	init_win(av[1], map);
+	if (!init_win(av[1], map))
+		return (0);
 	return (0);
 }

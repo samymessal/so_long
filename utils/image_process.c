@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 16:21:58 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/11 16:11:32 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/15 19:08:22 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,15 @@ void	draw(t_img *img_big, t_img img_s, int x_dest, int y_dest)
 	}	
 }
 
-void	download_image(t_data *data, t_img *img, char *path)
+int	download_image(t_data *data, t_img *img, char *path)
 {	
 	img->height = 0;
 	img->width = 0;
 	img->mlx_img = mlx_xpm_file_to_image(data->mlx_ptr, path, &img->width, &img->height);
+	if (!img->mlx_img)
+		return (0);
 	img->addr = mlx_get_data_addr(img->mlx_img, &img->bpp, &img->line_len, &img->endian);
-	return ;
+	return (1);
 }
 
 void	conditions_draw(t_img *img_big, t_img *all, char map, t_pos pos)
