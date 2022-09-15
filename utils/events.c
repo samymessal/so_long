@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 18:09:18 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/10 18:18:38 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/15 18:27:00 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int	handle_keypress(int keysym, t_data *data)
 		check_if_ok(data->map, player, keysym, 'E'))
 		data->moves++;
 	/* CHANGE TO FT_PRINT */
-	printf("Moves: %d\n", data->moves);
+	ft_putnbr_fd(data->moves, 1);
+	write (1, "\n", 1);
 	update_map(data->map);
 	player = find_elem(data->map, 'P');
 	if ((player.height == exit.height && player.width == exit.width) ||
@@ -42,16 +43,14 @@ int	handle_keypress(int keysym, t_data *data)
 
 int	handle_no_event(void *data)
 {
-	t_data	*test;
-	
-	test = data;
+	(void)data;
 	return (0);
 }
+
 int	handle_keyrelease(int keysym, void *data)
 {
 	/* This function needs to exist, but it is useless for the moment */
-	t_data	*test;
 	(void)keysym;
-	test = data;
+	(void)data;
 	return (0);
 }

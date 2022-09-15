@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 19:10:47 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/02 18:48:25 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/15 17:43:27 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,16 @@ char	*get_next_line(int fd)
 	int			ret;
 	char		*line;
 	char		*stash;
-	static char	buf[BUFFER_SIZE + 1];
+	static char	buf[2];
 
-	if (fd < 0 || fd > 1024 || BUFFER_SIZE < 1)
+	if (fd < 0 || fd > 1024)
 		return (NULL);
-	ret = BUFFER_SIZE;
+	ret = 1;
 	stash = NULL;
 	stash = ft_strjoin(stash, buf);
-	while (ret == BUFFER_SIZE && !ft_strchr(buf))
+	while (ret == 1 && !ft_strchr(buf))
 	{
-		ret = read(fd, buf, BUFFER_SIZE);
+		ret = read(fd, buf, 1);
 		if (ret == -1)
 			return (free(stash), NULL);
 		buf[ret] = '\0';

@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 15:23:44 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/11 16:43:34 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/15 18:18:50 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include "../mlx_linux/mlx.h"
-
-#define BUFFER_SIZE 1
-#define RED_PIXEL 0xFF0000
-#define GREEN_PIXEL 0xFF00
-#define WINDOW_HEIGHT 1000
-#define WINDOW_WIDTH 2000
 /*----------------Structures-----------------*/
 typedef struct s_img
 {
@@ -95,5 +89,10 @@ int		messages(char **av, char **map);
 void	free_tab(char **map);
 void	free_imgs(t_data *data, t_img *imgs);
 void	free_all(t_all all);
-
+/*----------------Path finder--------------------*/
+int		is_flooded(char **map);
+void	fill(char **map, int y, int x);
+void	flood(char **map);
+int		valid_path(char **map);
+int		flood_fill(char **map, int lines);
 #endif

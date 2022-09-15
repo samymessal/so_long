@@ -6,14 +6,16 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 16:20:55 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/14 20:04:56 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/15 17:51:04 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/so_long.h"
+
 int	main(int ac, char **av)
 {
-	char **map;
-	
+	char	**map;
+
 	if (ac != 2)
 	{
 		write(1, "Error\nToo many arguments\n", 25);
@@ -26,7 +28,7 @@ int	main(int ac, char **av)
 		return (0);
 	}
 	if (!messages(av, map))
-		return (0);
+		return (free_tab(map), 0);
 	init_win(av[1], map);
 	return (0);
 }

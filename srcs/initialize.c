@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:27:08 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/11 16:25:43 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/15 13:17:45 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 t_img	*init_img(t_data *data)
 {
 	t_img	*all;
-	int		i;
 
-	i = 0;
 	all = ft_calloc(sizeof(t_img), 8);
 	if (!all)
 		return (0);

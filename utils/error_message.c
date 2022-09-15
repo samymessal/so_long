@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 16:27:28 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/11 21:02:06 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/15 17:26:50 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ int	messages(char **av, char **map)
 	else if (!map_elements(map))
 	{
 		write(1, "Error\nToo many start positions\n", 32);
+		return (0);
+	}
+	else if (!flood_fill(map, ft_count_lines(av[1])))
+	{
+		write(1, "Error\nThe consulate is closed, no visas available\n", 51);
 		return (0);
 	}
 	return (1);

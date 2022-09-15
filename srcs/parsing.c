@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:42:07 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/11 16:40:33 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/15 17:44:02 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ int	ft_count_lines(char	*file_name)
 	char	*temp;
 	char	temp2;
 
-	ret = BUFFER_SIZE;
+	ret = 1;
 	lines = 1;
 	fd = open(file_name, O_RDONLY);
 	temp = malloc(sizeof(char) * 2);
 	if (!temp)
 		return (0);
 	temp2 = 'c';
-	while (ret == BUFFER_SIZE)
+	while (ret == 1)
 	{
-		ret = read(fd, temp, BUFFER_SIZE);
-		if (ret != BUFFER_SIZE)
+		ret = read(fd, temp, 1);
+		if (ret != 1)
 		{
 			if (temp2 == '\n')
 				return (0);
@@ -59,31 +59,3 @@ char	**read_map(char *file_name)
 		map[i++] = get_next_line(fd);
 	return (map);
 }
-
-// int	errors_man(char **av, char **map, int lines)
-// {
-// 	if (!ft_ber_file(av))
-// 		return (0);
-// 	else if (!square_map(map))
-// 		return (0);
-// 	else if (!map_walls(map, lines))
-// 		return (0);
-// 	else if (!map_elements(map))
-// 		return (0);
-// 	return (1);
-// }
-
-// int	main(int ac, char **av)
-// {
-// 	char	*test;
-// 	int		lines;
-// 	char	**all;
-// 	int		fd;
-	
-// 	if (ac > 2)
-// 		return (0);
-// 	lines = ft_count_lines(av[1]);
-// 	all = read_map(av[1]);
-// 	if (!errors_man(av, all, lines))
-// 		printf("Error\n");
-// }
