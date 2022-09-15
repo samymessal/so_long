@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 19:10:47 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/15 17:43:27 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/15 20:08:40 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,21 +65,3 @@ char	*get_next_line(int fd)
 	line = ft_stash_san(stash, buf);
 	return (free(stash), line);
 }
-
-// int	main(int ac, char **av)
-// {
-// 	char	*test;
-// 	int		lines;
-// 	char	**all;
-// 	int		fd;
-	
-// 	if (ac > 2)
-// 		return (0);
-// 	// fd = open("../text.txt", O_RDONLY);
-// 	// test = get_next_line(fd);
-// 	// printf("%s", test);
-// 	lines = ft_count_lines(av[1]);
-// 	all = malloc(sizeof(char *) * lines);
-	
-// 	printf("%d\n", num);
-// }

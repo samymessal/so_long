@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 15:53:25 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/10 17:04:30 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/15 20:12:13 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ int	check_if_ok(char **map, t_pos pos_p, int keysym, char elem)
 
 void	move(char **map, t_pos pos_p, int keysym)
 {
-	if (!check_if_ok(map, pos_p, keysym, '1') || !check_if_ok(map, pos_p, keysym, 'E'))
+	if (!check_if_ok(map, pos_p, keysym, '1')
+		|| !check_if_ok(map, pos_p, keysym, 'E'))
 		return ;
 	if (keysym == 'w')
 	{
@@ -94,14 +95,14 @@ void	move(char **map, t_pos pos_p, int keysym)
 void	update_map(char **map)
 {
 	t_pos	exit;
-	
+
 	(void)exit;
 	if (find_elem(map, 'C').height == -1)
 	{
 		exit = find_elem(map, 'E');
 		if (exit.height == -1)
 			return ;
-		map[exit.height][exit.width] = 'O'; 
+		map[exit.height][exit.width] = 'O';
 	}
 	return ;
 }

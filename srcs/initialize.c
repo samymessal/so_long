@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:27:08 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/15 19:37:01 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/15 20:00:55 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ t_img	*init_img(t_data *data)
 	all = ft_calloc(sizeof(t_img), 8);
 	if (!all)
 		return (0);
-	if(!download_image(data, &all[0], "img/case_0.xpm"))
+	if (!download_image(data, &all[0], "img/case_0.xpm"))
 		return (NULL);
-	if(!download_image(data, &all[1], "img/fence.xpm"))
+	if (!download_image(data, &all[1], "img/fence.xpm"))
 		return (NULL);
 	if (!download_image(data, &all[2], "img/douane.xpm"))
 		return (NULL);
@@ -89,7 +89,7 @@ int	init_win(char *filename, char **map)
 
 	screen.width = (ft_strlen(map[0]) - 1) * 64;
 	screen.height = (ft_count_lines(filename)) * 64;
-	if(!init_data(&data, screen.width, screen.height, map))
+	if (!init_data(&data, screen.width, screen.height, map))
 		return (free_tab(map), 0);
 	all.data = data;
 	all.big.mlx_img = mlx_new_image(data.mlx_ptr, screen.width, screen.height);
