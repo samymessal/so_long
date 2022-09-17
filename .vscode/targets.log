@@ -1,229 +1,241 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-# GNU Make 4.3
+# GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
-# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Sep 10 15:15:50 2022
+# Make data base, printed on Sat Sep 17 18:09:15 2022
 
 # Variables
 
-# makefile (from 'Makefile', line 16)
-OBJ = $(SRC:.c=.o)
-# environment
-GDK_BACKEND = x11
-# environment
-LC_ALL = C
-# makefile (from 'Makefile', line 13)
-SRC = srcs/initialize.c srcs/main.c srcs/parsing.c utils/image_process.c utils/events.c utils/parsing_errors.c utils/get_next_line.c utils/moves.c
-# environment
-SSH_AGENT_LAUNCHER = gnome-keyring
-# environment
-MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
-# environment
-VSCODE_CWD = /mnt/nfs/homes/smessal/Desktop/so_long/so_long_git
-# environment
-LIBVIRT_DEFAULT_URI = qemu:///system
-# default
-MAKE_COMMAND := make
-# environment
-QT_ACCESSIBILITY = 1
 # automatic
-@D = $(patsubst %/,%,$(dir $@))
-# environment
-VSCODE_HANDLES_UNCAUGHT_ERRORS = true
-# default
-.VARIABLES := 
-# environment
-PWD = /mnt/nfs/homes/smessal/Desktop/so_long/so_long_git
+<D = $(patsubst %/,%,$(dir $<))
 # automatic
-%D = $(patsubst %/,%,$(dir $%))
+?F = $(notdir $?)
 # environment
-LSCOLORS = Gxfxcxdxbxegedabagacad
-# environment
-XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/mnt/nfs/homes/smessal/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
-# environment
-OLDPWD = /mnt/nfs/homes/smessal/Desktop/so_long
-# automatic
-^D = $(patsubst %/,%,$(dir $^))
-# automatic
-%F = $(notdir $%)
-# environment
-VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/smessal/.config/Code/CachedData/784b0177c56c607789f9638da7b6bf3230d47a8c
-# environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session5
-# environment
-LANG = C
-# environment
-XAUTHORITY = /mnt/nfs/homes/smessal/.Xauthority
-# default
-.LOADED := 
-# default
-.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
-# environment
-GNOME_TERMINAL_SERVICE = :1.89
-# makefile
-MAKEFLAGS = pqrR
-# makefile
-CURDIR := /mnt/nfs/homes/smessal/Desktop/so_long/so_long_git
-# environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
-# automatic
-*D = $(patsubst %/,%,$(dir $*))
-# environment
-MFLAGS = -pqrR
-# environment
-SSH_AUTH_SOCK = /run/user/102123/keyring/ssh
+DESKTOP_SESSION = ubuntu
 # default
 .SHELLFLAGS := -c
+# makefile (from 'Makefile', line 17)
+OBJ = $(SRC:.c=.o)
 # environment
-XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
-# automatic
-+D = $(patsubst %/,%,$(dir $+))
-# environment
-XDG_SESSION_DESKTOP = ubuntu
-# makefile (from 'Makefile', line 1)
-MAKEFILE_LIST := Makefile
-# automatic
-@F = $(notdir $@)
-# environment
-ZSH = /mnt/nfs/homes/smessal/.oh-my-zsh
-# environment
-VSCODE_PID = 249222
-# environment
-KRB5CCNAME = FILE:/tmp/krb5cc_102123_l8KeTl
+XDG_SESSION_CLASS = user
+# makefile (from 'Makefile', line 13)
+SRC = srcs/initialize.c srcs/main.c srcs/parsing.c utils/image_process.c utils/events.c utils/parsing_errors.c utils/get_next_line.c utils/moves.c utils/free.c utils/error_message.c utils/pathfinder.c
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
-# environment
-SESSION_MANAGER = local/e1r7p2.clusters.42paris.fr:@/tmp/.ICE-unix/247477,unix/e1r7p2.clusters.42paris.fr:/tmp/.ICE-unix/247477
 # automatic
-*F = $(notdir $*)
+@D = $(patsubst %/,%,$(dir $@))
 # environment
-CHROME_DESKTOP = code-url-handler.desktop
+XAUTHORITY = /mnt/nfs/homes/smessal/.Xauthority
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/102123/bus
-# automatic
-<D = $(patsubst %/,%,$(dir $<))
-# environment
-VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
-# default
-MAKE_HOST := x86_64-pc-linux-gnu
-# environment
-GNOME_DESKTOP_SESSION_ID = this-is-deprecated
-# makefile
-SHELL = /bin/sh
-# default
-MAKECMDGOALS := all
+GDMSESSION = ubuntu
 # environment
 XMODIFIERS = @im=ibus
+# makefile
+CURDIR := /mnt/nfs/homes/smessal/Desktop/so_long/so_long_git
+# makefile
+SHELL = /bin/sh
+# makefile (from 'Makefile', line 20)
+RM = rm -rf
 # environment
-SHLVL = 1
+VTE_VERSION = 6003
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/c7a71a0a_8e88_40c2_a7eb_57667736554c
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-MAKELEVEL := 0
-# default
-MAKE = $(MAKE_COMMAND)
+_ = /usr/bin/code
+# makefile (from 'Makefile', line 21)
+CFLAGS = -Wall -Werror -Wextra -g3 -I./includes
 # environment
-PATH = /mnt/nfs/homes/smessal/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-# default
-MAKEFILES := 
+JOURNAL_STREAM = 9:468188
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
 # automatic
-^F = $(notdir $^)
+@F = $(notdir $@)
 # environment
-DOCKER_HOST = unix:///run/user/102123/docker.sock
-# automatic
-?F = $(notdir $?)
-# makefile (from 'Makefile', line 22)
-NAME = so_long
-# environment
-XDG_CURRENT_DESKTOP = Unity
-# environment
-LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
-# automatic
-+F = $(notdir $+)
-# environment
-XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
-# environment
-LESS = -R
-# environment
-DESKTOP_SESSION = ubuntu
-# environment
-ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+IM_CONFIG_PHASE = 1
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
-LOGNAME = smessal
-# makefile
-.DEFAULT_GOAL := all
+MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
 # environment
-SYSTEMD_EXEC_PID = 247500
-# makefile (from 'Makefile', line 19)
-RM = rm -rf
+XDG_DATA_DIRS = /usr/share/gnome:/usr/share/ubuntu:/mnt/nfs/homes/smessal/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
-DISPLAY = :0
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/102123/bus
 # environment
-USER = smessal
+MANAGERPID = 63855
 # environment
-GTK_MODULES = gail:atk-bridge
+VSCODE_CWD = /mnt/nfs/homes/smessal/Desktop/so_long/so_long_git
 # environment
-DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
+# environment
+KRB5CCNAME = FILE:/tmp/krb5cc_102123_f4K4jz
 # default
-MAKE_VERSION := 4.3
+MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PAGER = less
-# environment
-_ = /usr/bin/code
-# environment
-XDG_RUNTIME_DIR = /run/user/102123
-# makefile (from 'Makefile', line 20)
-CFLAGS = -Wall -Werror -Wextra -g3 -I./includes
+PATH = /mnt/nfs/homes/smessal/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # environment
 GPG_AGENT_INFO = /run/user/102123/gnupg/S.gpg-agent:0:1
 # environment
-COLORTERM = truecolor
+LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-XDG_SESSION_CLASS = user
+SESSION_MANAGER = local/e1r7p19.clusters.42paris.fr:@/tmp/.ICE-unix/64413,unix/e1r7p19.clusters.42paris.fr:/tmp/.ICE-unix/64413
+# environment
+XDG_RUNTIME_DIR = /run/user/102123
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+INVOCATION_ID = 32141e2619cb4c3d8d5e9cb0a93ceada
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/smessal
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# environment
+SSH_AUTH_SOCK = /run/user/102123/keyring/ssh
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# environment
+PWD = /mnt/nfs/homes/smessal/Desktop/so_long/so_long_git
+# default
+.LOADED := 
+# environment
+SSH_AGENT_PID = 64376
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# environment
+GTK_MODULES = gail:atk-bridge
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /mnt/nfs/homes/smessal
 # environment
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/smessal/.config/Code/CachedData/784b0177c56c607789f9638da7b6bf3230d47a8c
+# environment
+LOGNAME = smessal
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+ZSH = /mnt/nfs/homes/smessal/.oh-my-zsh
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 0
+# environment
+COLORTERM = truecolor
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
 QT_IM_MODULE = ibus
 # environment
-ELECTRON_RUN_AS_NODE = 1
+SHLVL = 2
+# makefile (from 'Makefile', line 19)
+CC = cc
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = smessal
+# makefile
+.DEFAULT_GOAL := all
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# environment
+LIBVIRT_DEFAULT_URI = qemu:///system
+# environment
+LESS = -R
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := make
+# environment
+OLDPWD = /mnt/nfs/homes/smessal/Desktop
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
 VSCODE_IPC_HOOK = /run/user/102123/vscode-ec360be3-1.71.0-main.sock
+# makefile
+MAKEFLAGS = pqrR
 # environment
-TERM = xterm-256color
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+GDK_BACKEND = x11
+# automatic
++F = $(notdir $+)
+# environment
+NO_AT_BRIDGE = 1
+# environment
+QT_ACCESSIBILITY = 1
+# environment
+DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
 # default
-.RECIPEPREFIX := 
+MAKEFILES := 
 # automatic
 <F = $(notdir $<)
+# environment
+PAGER = less
+# environment
+LC_ALL = C
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# environment
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/28553224_5c8a_40c3_a6b7_c5b9f8f7d454
+# automatic
+^F = $(notdir $^)
+# environment
+GNOME_TERMINAL_SERVICE = :1.92
 # default
 SUFFIXES := 
 # environment
-VSCODE_CLI = 1
-# environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
-# environment
-VTE_VERSION = 6800
-# environment
-XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/smessal
+CHROME_DESKTOP = code-url-handler.desktop
 # default
-.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
-# makefile (from 'Makefile', line 18)
-CC = cc
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
-XDG_MENU_PREFIX = gnome-
+GJS_DEBUG_OUTPUT = stderr
+# makefile (from 'Makefile', line 23)
+NAME = so_long
+# default
+.RECIPEPREFIX := 
 # environment
-GDMSESSION = ubuntu
+LANG = C
+# environment
+TERM = xterm-256color
+# environment
+DOCKER_HOST = unix:///run/user/102123/docker.sock
+# environment
+VSCODE_PID = 123365
 # variable set hash-table stats:
-# Load=106/1024=10%, Rehash=0, Collisions=14/145=10%
+# Load=112/1024=11%, Rehash=0, Collisions=20/146=14%
 
 # Pattern-specific Variable Values
 
@@ -231,22 +243,51 @@ GDMSESSION = ubuntu
 
 # Directories
 
-# . (device 60, inode 109253904): 15 files, no impossibilities.
-# srcs (device 60, inode 109256761): 4 files, no impossibilities so far.
+# . (device 56, inode 109253904): 11 files, no impossibilities.
+# srcs (device 56, inode 109256761): 4 files, no impossibilities so far.
 
-# 19 files, no impossibilities in 2 directories.
+# 15 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
 %.o: %.c
-#  recipe to execute (from 'Makefile', line 27):
-	$(CC) -Wall -Wextra -Werror -g3 -I./includes -I/usr/include -Imlx_linux -O3 -c $< -o $@
+#  recipe to execute (from 'Makefile', line 28):
+	$(CC) -Wall -Wextra -Werror -I./includes -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
 # 1 implicit rules, 0 (0.0%) terminal.
+
 # Files
 
 # Not a target:
-utils/parsing_errors.o:
+srcs/parsing.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+utils/image_process.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: so_long
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+ 
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
+
+.PHONY: all clean fclean re
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+utils/error_message.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -258,7 +299,14 @@ utils/moves.o:
 #  File has not been updated.
 
 # Not a target:
-srcs/main.o:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-09-17 17:39:55.00288821
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+utils/pathfinder.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -272,109 +320,23 @@ srcs/initialize.o: srcs/initialize.c
 # automatic
 # @ := srcs/initialize.o
 # automatic
-# * := srcs/initialize
+# % := 
 # automatic
-# < := srcs/initialize.c
+# * := srcs/initialize
 # automatic
 # + := srcs/initialize.c
 # automatic
-# % := 
+# | := 
+# automatic
+# < := srcs/initialize.c
 # automatic
 # ^ := srcs/initialize.c
 # automatic
 # ? := srcs/initialize.c
- 
-# automatic
-# | := 
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/14=14%
-#  recipe to execute (from 'Makefile', line 27):
-	$(CC) -Wall -Wextra -Werror -g3 -I./includes -I/usr/include -Imlx_linux -O3 -c $< -o $@
-
-# Not a target:
-Makefile:
-#  Implicit rule search has been done.
-#  Last modified 2022-09-09 16:54:40.830428628
-#  File has been updated.
-#  Successfully updated.
-
-so_long: srcs/initialize.o srcs/main.o srcs/parsing.o utils/image_process.o utils/events.o utils/parsing_errors.o utils/get_next_line.o utils/moves.o
-#  Implicit rule search has not been done.
-#  Last modified 2022-09-09 17:52:27.392568221
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
-#  recipe to execute (from 'Makefile', line 30):
-					$(CC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz libft.a -o $(NAME)
-
-# Not a target:
-utils/events.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-clean:
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 33):
-					$(RM) $(OBJ)
-
-# Not a target:
-srcs/parsing.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-srcs/initialize.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-09-09 17:32:22.537832341
-#  File has been updated.
-#  Successfully updated.
-
-re: fclean so_long
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
-
-# Not a target:
-.DEFAULT:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-all: so_long
-#  Phony target (prerequisite of .PHONY).
-#  Command line target.
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
-
-fclean: clean
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 36):
-					$(RM) $(NAME)
-
-# Not a target:
-utils/image_process.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-.PHONY: all clean fclean re
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  recipe to execute (from 'Makefile', line 28):
+	$(CC) -Wall -Wextra -Werror -I./includes -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
 # Not a target:
 utils/get_next_line.o:
@@ -382,20 +344,95 @@ utils/get_next_line.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 41):
+					$(RM) $(NAME)
+					$(RM) libft.a
+					@make fclean -sC utils/libft
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+re: fclean so_long
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 37):
+					$(RM) $(OBJ)
+					@make clean -sC utils/libft
+
+# Not a target:
+utils/parsing_errors.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+srcs/initialize.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-09-17 16:54:51.224301407
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+utils/free.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+so_long: srcs/initialize.o srcs/main.o srcs/parsing.o utils/image_process.o utils/events.o utils/parsing_errors.o utils/get_next_line.o utils/moves.o utils/free.o utils/error_message.o utils/pathfinder.o
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
+#  recipe to execute (from 'Makefile', line 31):
+				make -C utils/libft
+				ar -rcs utils/libft/libft.a
+				cp utils/libft/libft.a libft.a
+				$(CC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz libft.a -o $(NAME)
+
+# Not a target:
+utils/events.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+srcs/main.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=18/1024=2%, Rehash=0, Collisions=0/49=0%
+# Load=21/1024=2%, Rehash=0, Collisions=1/55=2%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 38 / storage = 376 B / avg = 9 B
-# current buf: size = 8162 B / used = 376 B / count = 38 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 38 / storage = 409 B / avg = 10 B
+# current buf: size = 8162 B / used = 409 B / count = 38 / avg = 10 B
 
-# strcache performance: lookups = 62 / hit rate = 38%
+# strcache performance: lookups = 61 / hit rate = 37%
 # hash-table stats:
-# Load=38/8192=0%, Rehash=0, Collisions=0/62=0%
-# Finished Make data base on Sat Sep 10 15:15:50 2022
+# Load=38/8192=0%, Rehash=0, Collisions=2/61=3%
+# Finished Make data base on Sat Sep 17 18:09:15 2022
 
  
