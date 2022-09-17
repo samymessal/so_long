@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 18:09:18 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/17 15:55:55 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/17 18:01:38 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ int	handle_keypress(int keysym, t_data *data)
 	t_pos	exit;
 	int		count_police;
 
-	if (find_elem(data->map, 'E').height == -1)
+	exit = find_elem(data->map, 'E');
+	if (exit.height == -1)
 		exit = find_elem(data->map, 'O');
-	else
-		exit = find_elem(data->map, 'E');
 	if (keysym == XK_Escape)
 		mlx_loop_end(data->mlx_ptr);
 	player = find_elem(data->map, 'P');
@@ -29,9 +28,11 @@ int	handle_keypress(int keysym, t_data *data)
 	move(data->map, player, keysym);
 	if (check_if_ok(data->map, player, keysym, '1')
 		&& check_if_ok(data->map, player, keysym, 'E'))
+	{
 		data->moves++;
-	ft_putnbr_fd(data->moves, 1);
-	write (1, "\n", 1);
+		ft_putnbr_fd(data->moves, 1);
+		write (1, "\n", 1);
+	}
 	update_map(data->map);
 	player = find_elem(data->map, 'P');
 	if ((player.height == exit.height && player.width == exit.width)
