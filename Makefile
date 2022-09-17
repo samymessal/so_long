@@ -6,7 +6,7 @@
 #    By: smessal <smessal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/02 19:49:20 by smessal           #+#    #+#              #
-#    Updated: 2022/09/15 18:22:57 by smessal          ###   ########.fr        #
+#    Updated: 2022/09/17 17:39:54 by smessal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ NAME	=		so_long
 all: 			$(NAME)
 
 %.o: %.c
-	$(CC) -Wall -Wextra -Werror -g3 -I./includes -I/usr/include -Imlx_linux -O3 -c $< -o $@
+	$(CC) -Wall -Wextra -Werror -I./includes -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
 $(NAME):		$(OBJ)
 				make -C utils/libft

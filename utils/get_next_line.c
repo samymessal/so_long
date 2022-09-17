@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 19:10:47 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/15 20:08:40 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/17 17:36:41 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,7 @@ char	*get_next_line(int fd)
 		stash = ft_strjoin(stash, buf);
 	}
 	line = ft_stash_san(stash, buf);
+	if (!line)
+		return (free(stash), NULL);
 	return (free(stash), line);
 }

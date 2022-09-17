@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 16:43:38 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/15 20:13:58 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/17 16:16:34 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	map_elements(char **map)
 		{
 			if (map[i][j] != '1' && map[i][j] != '0' && map[i][j] != 'E'
 				&& map[i][j] != 'C' && map[i][j] != 'P' && map[i][j] != 'M')
-				map[i][j] = '0';
+				return (0);
 			j++;
 		}
 		i++;

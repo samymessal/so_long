@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 16:20:55 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/15 19:32:05 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/17 17:05:29 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,14 @@ int	main(int ac, char **av)
 		return (0);
 	}
 	map = read_map(av[1]);
-	if (!map)
+	if (!map || !map[0])
 	{
-		write(1, "Error\nFailed map allocation", 28);
+		write(1, "Error\nFailed map allocation\n", 28);
+		if (map)
+			free(map);
 		return (0);
 	}
-	if (!messages(av, map))
+	if (!messages(av, map) || !(messages2(av, map)))
 		return (free_tab(map), 0);
 	if (!init_win(av[1], map))
 		return (0);

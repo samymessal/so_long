@@ -6,12 +6,12 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 15:23:44 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/15 19:08:10 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/17 16:51:17 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
-#define SO_LONG_H
+# define SO_LONG_H
 
 # include "../utils/libft/libft.h"
 # include <sys/types.h>
@@ -49,16 +49,15 @@ typedef struct s_all
 	t_img	*imgs;
 }	t_all;
 
-typedef	struct s_pos
+typedef struct s_pos
 {
 	int	width;
-	int height;
+	int	height;
 }	t_pos;
 
 /*---------------Events-----------------------*/
-int	handle_keypress(int keysym, t_data *data);
-int	handle_no_event(void *data);
-int	handle_keyrelease(int keysym, void *data);
+int		handle_keypress(int keysym, t_data *data);
+int		mouse_click(t_data *data);
 /*---------------Functions--------------------*/
 char	*get_next_line(int fd);
 int		ft_count_lines(char	*file_name);
@@ -85,9 +84,10 @@ int		count_elements(char **map, char elem);
 int		map_elements(char **map);
 int		square_map(char **map);
 int		messages(char **av, char **map);
+int		messages2(char **av, char **map);
 /*----------------Free--------------------------*/
 void	free_tab(char **map);
-void	free_imgs(t_data *data, t_img *imgs);
+void	free_imgs(t_data data, t_img *imgs);
 void	free_all(t_all all);
 /*----------------Path finder--------------------*/
 int		is_flooded(char **map);

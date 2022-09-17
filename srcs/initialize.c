@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:27:08 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/15 20:00:55 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/17 16:54:51 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,21 @@ t_img	*init_img(t_data *data)
 
 	all = ft_calloc(sizeof(t_img), 8);
 	if (!all)
-		return (0);
+		return (NULL);
 	if (!download_image(data, &all[0], "img/case_0.xpm"))
-		return (NULL);
+		return (all->line_len = 0, all);
 	if (!download_image(data, &all[1], "img/fence.xpm"))
-		return (NULL);
+		return (all->line_len = 0, all);
 	if (!download_image(data, &all[2], "img/douane.xpm"))
-		return (NULL);
+		return (all->line_len = 0, all);
 	if (!download_image(data, &all[3], "img/passport.xpm"))
-		return (NULL);
+		return (all->line_len = 0, all);
 	if (!download_image(data, &all[4], "img/player.xpm"))
-		return (NULL);
+		return (all->line_len = 0, all);
 	if (!download_image(data, &all[5], "img/police.xpm"))
-		return (NULL);
+		return (all->line_len = 0, all);
 	if (!download_image(data, &all[6], "img/boat.xpm"))
-		return (NULL);
+		return (all->line_len = 0, all);
 	return (all);
 }
 
@@ -96,12 +96,12 @@ int	init_win(char *filename, char **map)
 	all.big.addr = mlx_get_data_addr(all.big.mlx_img, &all.big.bpp, \
 						&all.big.line_len, &all.big.endian);
 	imgs = init_img(&data);
-	if (!imgs)
-		return (free_all(all), 0);
 	all.imgs = imgs;
+	if (imgs->line_len == 0)
+		return (free_all(all), 0);
 	mlx_hook(data.win_ptr, KeyPress, KeyPressMask, &handle_keypress, &data);
-	mlx_hook(data.win_ptr, KeyRelease, KeyReleaseMask, \
-		&handle_keyrelease, &data);
+	mlx_hook(data.win_ptr, 17, 0, \
+		&mouse_click, &data);
 	mlx_loop_hook(data.mlx_ptr, &render, &all);
 	mlx_loop(data.mlx_ptr);
 	free_all(all);

@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 18:09:18 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/15 20:07:38 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/17 15:55:55 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,8 @@ int	handle_keypress(int keysym, t_data *data)
 	return (0);
 }
 
-int	handle_no_event(void *data)
+int	mouse_click(t_data *data)
 {
-	(void)data;
-	return (0);
-}
-
-int	handle_keyrelease(int keysym, void *data)
-{
-	(void)keysym;
-	(void)data;
+	mlx_loop_end(data->mlx_ptr);
 	return (0);
 }
