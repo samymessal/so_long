@@ -6,7 +6,7 @@
 #    By: smessal <smessal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/02 19:49:20 by smessal           #+#    #+#              #
-#    Updated: 2022/09/17 17:39:54 by smessal          ###   ########.fr        #
+#    Updated: 2022/09/22 14:24:03 by smessal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,14 +18,14 @@ OBJ		= $(SRC:.c=.o)
 
 CC		=		cc
 RM		=		rm -rf
-CFLAGS	=		-Wall -Werror -Wextra -g3 -I./includes
+CFLAGS	=		-g3 -I./includes
 
 NAME	=		so_long
 
 all: 			$(NAME)
 
 %.o: %.c
-	$(CC) -Wall -Wextra -Werror -I./includes -I/usr/include -Imlx_linux -O3 -c $< -o $@
+	$(CC) -I./includes -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
 $(NAME):		$(OBJ)
 				make -C utils/libft

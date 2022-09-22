@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 17:02:13 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/17 16:53:15 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/22 16:32:15 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ int	is_flooded(char **map)
 			{
 				if (map[y][x + 1] == '0' || map[y][x + 1] == 'C')
 					return (0);
-				if (map[y][x - 1] == '0' || map[y][x + 1] == 'C')
+				if (map[y][x - 1] == '0' || map[y][x - 1] == 'C')
 					return (0);
-				if (map[y + 1][x] == '0' || map[y][x + 1] == 'C')
+				if (map[y + 1][x] == '0' || map[y + 1][x] == 'C')
 					return (0);
-				if (map[y - 1][x] == '0' || map[y][x + 1] == 'C')
+				if (map[y - 1][x] == '0' || map[y - 1][x] == 'C')
 					return (0);
 			}
 			x++;
