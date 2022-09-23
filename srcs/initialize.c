@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:27:08 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/17 16:54:51 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/23 15:35:58 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int	render(t_all *all)
 	draw_all(&all->big, all->imgs, all->data.map);
 	mlx_put_image_to_window(all->data.mlx_ptr, all->data.win_ptr, \
 		all->big.mlx_img, 0, 0);
+	//move_mechant(all->data);
 	return (0);
 }
 

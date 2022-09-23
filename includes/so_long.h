@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 15:23:44 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/17 16:51:17 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/23 15:33:13 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void	conditions_draw(t_img *img_big, t_img *all, char map, t_pos pos);
 t_img	*init_img(t_data *data);
 void	draw_all(t_img *img_big, t_img *all, char **map);
 int		init_win(char *filename, char **map);
+void	move_mechant(t_data data);
 /*---------------Moves------------------------*/
 t_pos	find_elem(char **map, char elem);
 int		check_if_ok(char **map, t_pos pos_p, int keysym, char elem);

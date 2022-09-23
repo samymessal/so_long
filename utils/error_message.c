@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 16:27:28 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/17 16:07:13 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/23 12:39:40 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,13 @@ int	messages(char **av, char **map)
 	}
 	else if (!map_walls(map, av[1]))
 	{
-		write(1, "Error\nMap not closed, can't swim all the atlantic\n", 50);
+		write(1, "Error\nMap not closed, you'll get lost before ", 45);
+		write(1, "reaching Algeciras\n", 20);
 		return (0);
 	}
 	else if (!map_elements(map))
 	{
-		write(1, "Error\nMap's element count is incorrect\n", 39);
+		write(1, "Error\nInvalid Map\n", 18);
 		return (0);
 	}
 	return (1);
