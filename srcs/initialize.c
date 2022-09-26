@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:27:08 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/23 15:35:58 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/26 21:31:48 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,10 @@ void	draw_all(t_img *img_big, t_img *all, char **map)
 
 int	render(t_all *all)
 {
+	//move_mechant(all->data);
 	draw_all(&all->big, all->imgs, all->data.map);
 	mlx_put_image_to_window(all->data.mlx_ptr, all->data.win_ptr, \
 		all->big.mlx_img, 0, 0);
-	//move_mechant(all->data);
 	return (0);
 }
 

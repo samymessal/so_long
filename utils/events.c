@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 18:09:18 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/23 15:14:16 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/26 22:10:25 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int	handle_keypress(int keysym, t_data *data)
 		mlx_loop_end(data->mlx_ptr);
 		write(1, "First step done, now you need to get married\n", 45);
 	}
+	move_mechant(*data);
 	return (0);
 }
 

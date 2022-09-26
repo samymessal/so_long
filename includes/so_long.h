@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 15:23:44 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/23 15:33:13 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/26 23:23:22 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,18 @@ void	conditions_draw(t_img *img_big, t_img *all, char map, t_pos pos);
 t_img	*init_img(t_data *data);
 void	draw_all(t_img *img_big, t_img *all, char **map);
 int		init_win(char *filename, char **map);
-void	move_mechant(t_data data);
+void    move_mechant(t_data data);
 /*---------------Moves------------------------*/
 t_pos	find_elem(char **map, char elem);
 int		check_if_ok(char **map, t_pos pos_p, int keysym, char elem);
 void	move(char **map, t_pos pos_p, int keysym);
 void	update_map(char **map);
+/*----------------Path finder--------------------*/
+int		is_flooded(char **map);
+void	fill(char **map, int y, int x);
+void	flood(char **map);
+int		valid_path(char **map);
+int		flood_fill(char **map, int lines);
 /*---------------Errors------------------------*/
 int		ft_ber_file(char **av);
 int		map_walls(char **map, char *filename);
@@ -90,10 +96,4 @@ int		messages2(char **av, char **map);
 void	free_tab(char **map);
 void	free_imgs(t_data data, t_img *imgs);
 void	free_all(t_all all);
-/*----------------Path finder--------------------*/
-int		is_flooded(char **map);
-void	fill(char **map, int y, int x);
-void	flood(char **map);
-int		valid_path(char **map);
-int		flood_fill(char **map, int lines);
 #endif
