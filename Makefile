@@ -6,7 +6,7 @@
 #    By: smessal <smessal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/02 19:49:20 by smessal           #+#    #+#              #
-#    Updated: 2022/09/23 15:13:24 by smessal          ###   ########.fr        #
+#    Updated: 2022/09/27 21:39:32 by smessal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@ SRC		=	srcs/initialize.c srcs/main.c srcs/parsing.c utils/image_process.c \
 			utils/events.c utils/parsing_errors.c utils/get_next_line.c \
 			utils/moves.c utils/free.c utils/error_message.c utils/pathfinder.c
 
-BONUS	=	srcs/initialize.c srcs/main.c srcs/parsing.c utils/image_process.c \
-			utils/events.c utils/parsing_errors_bonus.c utils/get_next_line.c \
+BONUS	=	srcs/initialize_bonus.c srcs/main.c srcs/parsing.c utils/image_process.c \
+			utils/events_bonus.c utils/parsing_errors_bonus.c utils/get_next_line.c \
 			utils/moves.c utils/free.c utils/error_message.c utils/pathfinder.c \
 			utils/move_mechant_bonus.c
 

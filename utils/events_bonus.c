@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   events.c                                           :+:      :+:    :+:   */
+/*   events_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/04 18:09:18 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/27 21:36:53 by smessal          ###   ########.fr       */
+/*   Created: 2022/09/27 21:36:33 by smessal           #+#    #+#             */
+/*   Updated: 2022/09/27 21:37:56 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int	handle_keypress(int keysym, t_data *data)
 		mlx_loop_end(data->mlx_ptr);
 		write(1, "First step done, now you need to get married\n", 45);
 	}
+	move_mechant(*data);
 	return (0);
 }
 
