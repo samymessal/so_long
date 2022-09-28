@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 16:20:55 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/17 17:05:29 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/28 23:34:46 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		write(1, "Error\nToo many arguments\n", 25);
+		write(1, "Error\nIncorrect number of arguments\n", 36);
 		return (0);
 	}
 	map = read_map(av[1]);
