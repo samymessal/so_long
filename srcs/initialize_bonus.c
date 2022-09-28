@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:37:05 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/27 21:37:47 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/28 22:50:11 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,21 @@ void	draw_all(t_img *img_big, t_img *all, char **map)
 
 int	render(t_all *all)
 {
-	//move_mechant(all->data);
 	draw_all(&all->big, all->imgs, all->data.map);
 	mlx_put_image_to_window(all->data.mlx_ptr, all->data.win_ptr, \
 		all->big.mlx_img, 0, 0);
+	all->data.counter++;
+	if (all->data.counter == 200)
+	{
+		move_mechant(all->data);
+		all->data.counter = 0;
+		if (!count_elements(all->data.map, 'P'))
+		{
+			mlx_loop_end(all->data.mlx_ptr);
+			write(1, "Game over\nNext time bring money for the bribe", 45);
+			write(1, ", f*****g amateur\n", 19);
+		}
+	}
 	return (0);
 }
 
@@ -78,6 +89,7 @@ int	init_data(t_data *data, int width, int height, char **map)
 		return (free(data->win_ptr), 0);
 	data->map = map;
 	data->moves = 0;
+	data->counter = 0;
 	init_mechant(data);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 15:23:44 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/26 23:48:34 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/28 23:32:01 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_data
 	char	**map;
 	int		*mechant;
 	int		moves;
+	int		counter;
 }	t_data;
 
 typedef struct s_all
@@ -73,8 +74,8 @@ void	conditions_draw(t_img *img_big, t_img *all, char map, t_pos pos);
 t_img	*init_img(t_data *data);
 void	draw_all(t_img *img_big, t_img *all, char **map);
 int		init_win(char *filename, char **map);
-void    move_mechant(t_data data);
-void    init_mechant(t_data *data);
+void	move_mechant(t_data data);
+void	init_mechant(t_data *data);
 /*---------------Moves------------------------*/
 t_pos	find_elem(char **map, char elem);
 int		check_if_ok(char **map, t_pos pos_p, int keysym, char elem);

@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 14:59:45 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/26 23:59:55 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/28 23:31:01 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,30 @@ void    init_mechant(t_data *data)
     }    
 }
 
+int    conditions_mechant(t_data data, int i, int j, int k)
+{
+    char **map;
+
+    map = data.map;
+    if ((map[i][j + 1] == '0' || map[i][j + 1] == 'P')
+    && data.mechant[k] == 0)
+    {
+        map[i][j + 1] = 'M';
+        map[i][j] = '0';
+        j++;
+        if (map[i][j + 1] != '0' && map[i][j + 1] != 'P')
+            data.mechant[k] = 1;
+    }
+    else if ((map[i][j - 1] == '0' || map[i][j - 1] == 'P'))
+    {
+        map[i][j - 1] = 'M';
+        map[i][j] = '0';
+        if (map[i][j - 2] & map[i][j - 2] != '0' && map[i][j - 2] != 'P')
+            data.mechant[k] = 0;
+    }
+    return (j);
+}
+
 void    move_mechant(t_data data)
 {
     int     i;
@@ -46,35 +70,11 @@ void    move_mechant(t_data data)
         {
             if (map[i][j] && map[i][j] == 'M')
             {
-                if ((map[i][j + 1] == '0' || map[i][j + 1] == 'P')
-                && data.mechant[k] == 0)
-                {
-                    map[i][j + 1] = 'M';
-                    map[i][j] = '0';
-                    j++;
-                    if (map[i][j + 1] != '0' && map[i][j + 1] != 'P')
-                    {
-                        data.mechant[k] = 1;
-                        printf("map[i][j + 1]: %c\n", map[i][j + 1]);
-                    }
-                }
-                else if ((map[i][j - 1] == '0' || map[i][j - 1] == 'P'))
-                {
-                    map[i][j - 1] = 'M';
-                    map[i][j] = '0';
-                    if (map[i][j - 2] & map[i][j - 2] != '0' && map[i][j - 2] != 'P')
-                        data.mechant[k] = 0;
-                }
+                j = conditions_mechant(data, i, j, k);
                 k++;
             }
             j++;
         }
-        i++;
-    }
-    i = 0;
-    while (map[i])
-    {
-        printf("%s", map[i]);
         i++;
     }
 }

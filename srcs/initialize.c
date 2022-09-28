@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:27:08 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/27 21:38:46 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/28 22:14:51 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ int	init_data(t_data *data, int width, int height, char **map)
 	data->map = map;
 	data->moves = 0;
 	data->mechant = NULL;
+	data->counter = 0;
 	return (1);
 }
 

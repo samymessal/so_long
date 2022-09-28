@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:36:33 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/27 21:37:56 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/28 22:50:21 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	game_over(int keysym, t_data *data)
 	{
 		mlx_loop_end(data->mlx_ptr);
 		write(1, "Game over\nNext time bring money for the bribe", 45);
-		write(1, ", F*****g amateur\n", 19);
+		write(1, ", f*****g amateur\n", 19);
 	}
 }
 
@@ -63,7 +63,6 @@ int	handle_keypress(int keysym, t_data *data)
 		mlx_loop_end(data->mlx_ptr);
 		write(1, "First step done, now you need to get married\n", 45);
 	}
-	move_mechant(*data);
 	return (0);
 }
 

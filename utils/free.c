@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 12:39:30 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/17 16:51:10 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/28 22:48:17 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,6 @@ void	free_all(t_all all)
 		mlx_destroy_display(all.data.mlx_ptr);
 	if (all.data.mlx_ptr)
 		free(all.data.mlx_ptr);
+	if (all.data.mechant)
+		free(all.data.mechant);
 }
