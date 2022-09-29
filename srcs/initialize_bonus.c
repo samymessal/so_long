@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:37:05 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/28 22:50:11 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/29 15:45:42 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	render(t_all *all)
 	mlx_put_image_to_window(all->data.mlx_ptr, all->data.win_ptr, \
 		all->big.mlx_img, 0, 0);
 	all->data.counter++;
-	if (all->data.counter == 200)
+	if (all->data.mechant && all->data.counter == 150)
 	{
 		move_mechant(all->data);
 		all->data.counter = 0;
@@ -91,6 +91,8 @@ int	init_data(t_data *data, int width, int height, char **map)
 	data->moves = 0;
 	data->counter = 0;
 	init_mechant(data);
+	if (!data->mechant)
+		return (0);
 	return (1);
 }
 
@@ -104,14 +106,14 @@ int	init_win(char *filename, char **map)
 	screen.width = (ft_strlen(map[0]) - 1) * 64;
 	screen.height = (ft_count_lines(filename)) * 64;
 	if (!init_data(&data, screen.width, screen.height, map))
-		return (free_tab(map), 0);
+		return (free_data(&data), 0);
 	all.data = data;
 	all.big.mlx_img = mlx_new_image(data.mlx_ptr, screen.width, screen.height);
 	all.big.addr = mlx_get_data_addr(all.big.mlx_img, &all.big.bpp, \
 						&all.big.line_len, &all.big.endian);
 	imgs = init_img(&data);
 	all.imgs = imgs;
-	if (imgs->line_len == 0)
+	if (imgs->line_len == 0 || !imgs)
 		return (free_all(all), 0);
 	mlx_hook(data.win_ptr, KeyPress, KeyPressMask, &handle_keypress, &data);
 	mlx_hook(data.win_ptr, 17, 0, \

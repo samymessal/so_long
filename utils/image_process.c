@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 16:21:58 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/17 15:08:14 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/29 15:57:54 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ void	draw(t_img *img_big, t_img img_s, int x_dest, int y_dest)
 		x_dest = temp;
 		while (j < 64)
 		{
-			color = *(int *)(img_s.addr + i * img_s.line_len + j * 4);
+			color = *(int *)(img_s.addr + i * img_s.line_len + \
+				j * (img_s.bpp / 8));
 			my_mlx_pixel_put(img_big, x_dest, y_dest, color);
 			x_dest++;
 			j++;

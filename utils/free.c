@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 12:39:30 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/28 22:48:17 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/29 15:55:23 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@ void	free_tab(char **map)
 	int	i;
 
 	i = 0;
-	while (map[i])
+	while (map && map[i])
 	{
 		free(map[i]);
 		i++;
 	}
-	free(map);
+	if (map)
+		free(map);
 }
 
 void	free_imgs(t_data data, t_img *imgs)
@@ -36,7 +37,21 @@ void	free_imgs(t_data data, t_img *imgs)
 			mlx_destroy_image(data.mlx_ptr, imgs[i].mlx_img);
 		i++;
 	}
-	free(imgs);
+	if (imgs)
+		free(imgs);
+}
+
+void	free_data(t_data *data)
+{
+	if (data->map)
+		free_tab(data->map);
+	if (data->win_ptr)
+		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+	if (data->mlx_ptr)
+	{
+		mlx_destroy_display(data->mlx_ptr);
+		free(data->mlx_ptr);
+	}
 }
 
 void	free_all(t_all all)

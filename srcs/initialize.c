@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:27:08 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/28 22:14:51 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/29 15:57:16 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int	init_win(char *filename, char **map)
 						&all.big.line_len, &all.big.endian);
 	imgs = init_img(&data);
 	all.imgs = imgs;
-	if (imgs->line_len == 0)
+	if (imgs->line_len == 0 || !imgs)
 		return (free_all(all), 0);
 	mlx_hook(data.win_ptr, KeyPress, KeyPressMask, &handle_keypress, &data);
 	mlx_hook(data.win_ptr, 17, 0, \

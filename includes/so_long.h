@@ -6,7 +6,7 @@
 /*   By: smessal <smessal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 15:23:44 by smessal           #+#    #+#             */
-/*   Updated: 2022/09/28 23:32:01 by smessal          ###   ########.fr       */
+/*   Updated: 2022/09/29 15:40:05 by smessal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,6 @@ int		messages2(char **av, char **map);
 /*----------------Free--------------------------*/
 void	free_tab(char **map);
 void	free_imgs(t_data data, t_img *imgs);
+void	free_data(t_data *data);
 void	free_all(t_all all);
 #endif
